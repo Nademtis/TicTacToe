@@ -2,9 +2,15 @@
 
 window.addEventListener("load", start())
 
+// ***************** CONTROLLER *****************
+
 function start() {
     console.log("js");
     makeBoardClickable();
+}
+function selectCell(row, col) {
+    writeToCell(row,col,1)
+    console.table(model);
 }
 
 function makeBoardClickable() {
@@ -22,6 +28,7 @@ function boardClicked(event) {
         const row = cell.dataset.row
         const col = cell.dataset.col
         console.log(`clicked on row:  ${row} and col: ${col} `);
+        selectCell(row, col)
     }
 
 }
@@ -29,9 +36,9 @@ function boardClicked(event) {
 // ***************** MODEL *****************
 
 const model = [
-    [0,0,0],
-    [0,0,0],
-    [0,0,0],
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
 ]
 
 function writeToCell(row, col, value) {
