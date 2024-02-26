@@ -2,16 +2,26 @@
 
 window.addEventListener("load", start())
 
-function start(){
+function start() {
     console.log("js");
     makeBoardClickable();
 }
 
-function makeBoardClickable(){
+function makeBoardClickable() {
     document.querySelector("#board")
-    .addEventListener("click", boardClicked)
+        .addEventListener("click", boardClicked)
 }
 
-function boardClicked(event){
+function boardClicked(event) {
     console.log('board clicked');
+    const cell = event.target
+
+    if (cell.classList.contains("cell")) {
+        console.log(cell);
+
+        const row = cell.dataset.row
+        const col = cell.dataset.col
+        console.log(`clicked on row:  ${row} and col: ${col} `);
+    }
+
 }
