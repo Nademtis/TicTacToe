@@ -4,6 +4,15 @@ window.addEventListener("load", start())
 
 // ***************** CONTROLLER *****************
 
+//
+/*KRAV
+    Turskifte
+    Automatisk player
+    Vælg random ledigt felt
+    Tjek vinder
+    Stop spillet når der er vundet
+*/
+
 function start() {
     console.log("js");
     makeBoardClickable();
