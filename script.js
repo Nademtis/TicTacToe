@@ -25,3 +25,20 @@ function boardClicked(event) {
     }
 
 }
+
+// ***************** MODEL *****************
+
+const model = [
+    [0,0,0],
+    [0,0,0],
+    [0,0,0],
+]
+
+function writeToCell(row, col, value) {
+    model[row][col] = value;
+}
+
+function readFromCell(row, col) {
+    return model[row][col];
+}
+
