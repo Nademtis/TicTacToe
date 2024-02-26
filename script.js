@@ -30,7 +30,17 @@ function boardClicked(event) {
         console.log(`clicked on row:  ${row} and col: ${col} `);
         selectCell(row, col)
     }
+}
 
+function displayBoard() {
+    for (let row = 0; row < 3; row++) {
+        for (let col = 0; col < 3; col++) {
+            const value = readFromCell(row, col);
+            console.log("value: ", value);
+            const cell = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
+            cell.textContent = value;
+        }
+    }
 }
 
 // ***************** MODEL *****************
