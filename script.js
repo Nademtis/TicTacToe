@@ -9,8 +9,9 @@ function start() {
     makeBoardClickable();
 }
 function selectCell(row, col) {
-    writeToCell(row,col,1)
-    console.table(model);
+    writeToCell(row, col, 1)
+    //console.table(model);
+    displayBoard()
 }
 
 function makeBoardClickable() {
@@ -38,7 +39,14 @@ function displayBoard() {
             const value = readFromCell(row, col);
             console.log("value: ", value);
             const cell = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
-            cell.textContent = value;
+
+
+            //cell.textContent = value;
+            switch (value) {
+                case 0: cell.textContent = " "; break
+                case 1: cell.textContent = "X"; break
+                case 2: cell.textContent = "O"; break
+            }
         }
     }
 }
